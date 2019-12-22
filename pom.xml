@@ -29,6 +29,31 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <!--lombox实体类工具-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.10</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!--在类中使用get和post方式-->
+        <!-- https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp -->
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>4.2.2</version>
+        </dependency>
+
+        <!--实体类转json-->
+        <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.62</version>
+        </dependency>
+
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -40,6 +65,7 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
     </dependencies>
 
     <build>
