@@ -1,7 +1,10 @@
 package life.ls.community.controller;
+import	java.util.Date;
 
 import life.ls.community.dto.AccessTokenDTO;
 import life.ls.community.dto.GitHubUser;
+import life.ls.community.mapper.UserMapper;
+import life.ls.community.model.User;
 import life.ls.community.provider.GithubProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -9,11 +12,17 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpServletRequest;
+import java.util.UUID;
+
 /**
  * 连接github的Controller
  */
 @Controller
 public class AuthorizeController {
+    @Autowired
+    private UserMapper userMapper;
+
     @Autowired
     private GithubProvider githubProvider;
 
@@ -27,7 +36,8 @@ public class AuthorizeController {
 
     @GetMapping("/callback")
     public String callback(@RequestParam("code") String code,
-                           @RequestParam("state") String state) {
+                           @RequestParam("state") String state,
+                           HttpServletRequest request) {
         //1.获取access_token
         //1.1将参数装配到实体类
         AccessTokenDTO atd = new AccessTokenDTO();
@@ -40,9 +50,25 @@ public class AuthorizeController {
         String accessToken = githubProvider.getAccessToken(atd);
 
         //2.获取user
-        GitHubUser user = githubProvider.getUser(accessToken);
-        System.out.println(user);
+        GitHubUser gitHubUser = githubProvider.getUser(accessToken);
 
-        return "index";
+        //3.登录信息存储到session
+        if (gitHubUser!=null) {
+
+            //测试：保存数据到数据库
+            User user=new User();
+            user.setAccount_id(gitHubUser.getId());
+            user.setName(gitHubUser.getName());
+            user.setToken(UUID.randomUUID().toString());
+            user.setGtm_create(new Date());
+            user.setGtm_modified(new Date());
+            userMapper.save(user);
+            //登录成功保存信息到session
+            request.getSession().setAttribute("user", gitHubUser);
+            return "redirect:/";
+        }else {
+            return "redirect:/error";
+        }
+
     }
 }
