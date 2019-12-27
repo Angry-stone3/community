@@ -9,10 +9,11 @@ import java.util.Date;
  */
 @Data
 public class User {
-    private String id;
-    private String account_id;
+    private Long id;
+    private String accountId;
     private String name;
     private String token;
-    private Date gtm_create;
-    private Date gtm_modified;
+    private Date gmtCreate;
+    private Date gmtModified;
+    private String avatarUrl;
 }

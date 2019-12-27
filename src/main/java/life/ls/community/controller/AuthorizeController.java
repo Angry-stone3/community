@@ -12,7 +12,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.UUID;
 
 /**
@@ -37,7 +39,8 @@ public class AuthorizeController {
     @GetMapping("/callback")
     public String callback(@RequestParam("code") String code,
                            @RequestParam("state") String state,
-                           HttpServletRequest request) {
+                           HttpServletRequest request,
+                           HttpServletResponse response) {
         //1.获取access_token
         //1.1将参数装配到实体类
         AccessTokenDTO atd = new AccessTokenDTO();
@@ -52,19 +55,21 @@ public class AuthorizeController {
         //2.获取user
         GitHubUser gitHubUser = githubProvider.getUser(accessToken);
 
-        //3.登录信息存储到session
-        if (gitHubUser!=null) {
-
-            //测试：保存数据到数据库
+        //3.登录信息存储到数据库
+        if (gitHubUser!=null&&gitHubUser.getId()!=null) {
+            //封装数据
             User user=new User();
-            user.setAccount_id(gitHubUser.getId());
+            String token=UUID.randomUUID().toString();
+            user.setAccountId(String.valueOf(gitHubUser.getId()));
             user.setName(gitHubUser.getName());
-            user.setToken(UUID.randomUUID().toString());
-            user.setGtm_create(new Date());
-            user.setGtm_modified(new Date());
+            user.setGmtCreate(new Date());
+            user.setToken(token);
+            user.setGmtModified(new Date());
+            user.setAvatarUrl(gitHubUser.getAvatarUrl());
+
             userMapper.save(user);
-            //登录成功保存信息到session
-            request.getSession().setAttribute("user", gitHubUser);
+            //保存token到cookie
+            response.addCookie(new Cookie("token",token));
             return "redirect:/";
         }else {
             return "redirect:/error";

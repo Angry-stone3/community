@@ -5,6 +5,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/life/ls/community/controller/AuthorizeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/life/ls/community/controller/AuthorizeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/life/ls/community/controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/life/ls/community/controller/IndexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/life/ls/community/dto/GitHubUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/life/ls/community/dto/GitHubUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/life/ls/community/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/life/ls/community/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/life/ls/community/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/life/ls/community/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
     </list>
@@ -28,12 +32,36 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand />
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="community" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="community" type="feb32156:DbDataSourceImpl" />
+        <item name="COMMUNITY: database" type="2aa06773:H2ImplModel$Database" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="community" type="feb32156:DbDataSourceImpl" />
+        <item name="COMMUNITY: database" type="2aa06773:H2ImplModel$Database" />
+        <item name="PUBLIC: schema" type="7f85d983:H2ImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="community" type="feb32156:DbDataSourceImpl" />
+        <item name="COMMUNITY: database" type="2aa06773:H2ImplModel$Database" />
+        <item name="PUBLIC: schema" type="7f85d983:H2ImplModel$Schema" />
+        <item name="USER: table" type="818c1b4a:H2ImplModel$Table" />
+      </path>
+    </expand>
     <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JavaScript File" />
         <option value="HTML File" />
         <option value="Class" />
       </list>
@@ -50,7 +78,8 @@
     </option>
     <option name="importingSettings">
       <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
+        <option name="jdkForImporter" value="1.8" />
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
       </MavenImportingSettings>
     </option>
   </component>
@@ -68,8 +97,8 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="database.data.extractors.current.id" value="SQL Inserts" />
-    <property name="last_opened_file_path" value="D:/idea project/cloud-demo" />
+    <property name="database.data.extractors.current.id" value="HTML Table" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static/img" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -81,10 +110,15 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="life.ls.community" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\code\community\src\main\resources\static\img" />
+      <recent name="C:\code\community\src\main\resources\templates" />
       <recent name="C:\code\community\src\main\resources\static" />
     </key>
   </component>
@@ -113,7 +147,17 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand />
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@5d32257f" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@5d32257f" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@75158042" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+          </expand>
           <select />
         </treeState>
       </serviceView>
@@ -138,7 +182,19 @@
       <workItem from="1577084286738" duration="5654000" />
       <workItem from="1577090566858" duration="2666000" />
       <workItem from="1577093263985" duration="398000" />
-      <workItem from="1577093849001" duration="7840000" />
+      <workItem from="1577093849001" duration="13729000" />
+      <workItem from="1577112100660" duration="1304000" />
+      <workItem from="1577149258528" duration="6458000" />
+      <workItem from="1577169758870" duration="23898000" />
+      <workItem from="1577325536208" duration="2439000" />
+      <workItem from="1577343397049" duration="9526000" />
+      <workItem from="1577360175260" duration="5641000" />
+      <workItem from="1577365885572" duration="2615000" />
+      <workItem from="1577369809333" duration="554000" />
+      <workItem from="1577370745018" duration="2096000" />
+      <workItem from="1577406901994" duration="10836000" />
+      <workItem from="1577429210818" duration="11879000" />
+      <workItem from="1577450943089" duration="601000" />
     </task>
     <task id="LOCAL-00001" summary="change config then commit">
       <created>1577014849679</created>
@@ -179,5 +235,16 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="change config then commit" />
     <option name="LAST_COMMIT_MESSAGE" value="change config then commit" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="SpringBootApplicationConfigurationType">
+        <watch expression="user" />
+        <watch expression="pageSize" />
+        <watch expression="pageSize" language="JAVA" />
+        <watch expression="pageInfo" />
+        <watch expression="((Request)((RequestFacade)request).request).response" custom="org.apache.catalina.connector.Request,org.apache.catalina.connector.RequestFacade" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
