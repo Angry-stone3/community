@@ -3,13 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="94f7fc7a-0ce5-4d2d-8a71-0afe08b53ae5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/life/ls/community/controller/AuthorizeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/life/ls/community/controller/AuthorizeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/life/ls/community/controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/life/ls/community/controller/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/life/ls/community/dto/GitHubUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/life/ls/community/dto/GitHubUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/life/ls/community/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/life/ls/community/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/life/ls/community/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/life/ls/community/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -58,6 +53,9 @@
     </expand>
     <select />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="community" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -98,7 +96,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="database.data.extractors.current.id" value="HTML Table" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../community2" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -110,7 +108,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -194,7 +192,10 @@
       <workItem from="1577370745018" duration="2096000" />
       <workItem from="1577406901994" duration="10836000" />
       <workItem from="1577429210818" duration="11879000" />
-      <workItem from="1577450943089" duration="601000" />
+      <workItem from="1577450943089" duration="5661000" />
+      <workItem from="1577457174400" duration="592000" />
+      <workItem from="1577780895992" duration="4694000" />
+      <workItem from="1577791655606" duration="10352000" />
     </task>
     <task id="LOCAL-00001" summary="change config then commit">
       <created>1577014849679</created>
@@ -203,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577014849679</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add interceptor">
+      <created>1577451596614</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1577451596614</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,7 +242,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="change config then commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="change config then commit" />
+    <MESSAGE value="add interceptor" />
+    <option name="LAST_COMMIT_MESSAGE" value="add interceptor" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
