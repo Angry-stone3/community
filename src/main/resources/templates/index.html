@@ -9,6 +9,12 @@
     <script src="js/jquery-3.1.1.min.js"></script>
     <script src="js/bootstrap.js"></script>
 </head>
+<script type="text/javascript">
+    var result = window.localStorage.getItem("closeable");
+    if (result == "true") {
+        window.close();
+    }
+</script>
 <body>
 
 <!--引入导航-->
@@ -22,7 +28,7 @@
 
             <div class="media" th:each="question:${pageInfo.list}">
                 <div class="media-left">
-                        <img class="media-object" th:src="${question.user.avatarUrl}">
+                    <img class="media-object" th:src="${question.user.avatarUrl}">
                 </div>
                 <div class="media-body">
                     <h4 class="media-heading">

@@ -56,4 +56,12 @@ public interface UserMapper {
     @Update("update user set name =#{name},token=#{token},gmt_modified=#{gmtModified},avatar_url=#{avatarUrl}" +
             " where id=#{id}")
     void update(User dbUser);
+
+
+    /**
+     * 只查询用户信息
+     * @param id
+     */
+    @Select("select * from user where id=#{id}")
+    User findUserById(Long id);
 }

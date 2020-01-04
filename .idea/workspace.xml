@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="94f7fc7a-0ce5-4d2d-8a71-0afe08b53ae5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/life/ls/community/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/life/ls/community/mapper/UserMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,8 +60,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -106,7 +108,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -196,7 +198,20 @@
       <workItem from="1577791655606" duration="10352000" />
       <workItem from="1577803424962" duration="345000" />
       <workItem from="1577843377243" duration="9928000" />
-      <workItem from="1577862362626" duration="3584000" />
+      <workItem from="1577862362626" duration="9621000" />
+      <workItem from="1577879583027" duration="764000" />
+      <workItem from="1577928740221" duration="3519000" />
+      <workItem from="1577961239059" duration="2338000" />
+      <workItem from="1577973639355" duration="2394000" />
+      <workItem from="1578011914386" duration="6994000" />
+      <workItem from="1578033885157" duration="13469000" />
+      <workItem from="1578060477948" duration="655000" />
+      <workItem from="1578061279363" duration="412000" />
+      <workItem from="1578101934021" duration="3788000" />
+      <workItem from="1578106678725" duration="1641000" />
+      <workItem from="1578108399006" duration="146000" />
+      <workItem from="1578108745547" duration="2336000" />
+      <workItem from="1578122483989" duration="1992000" />
     </task>
     <task id="LOCAL-00001" summary="change config then commit">
       <created>1577014849679</created>
@@ -219,7 +234,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577803511691</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add viewCount">
+      <created>1577866032277</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1577866032277</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,7 +274,8 @@
     <MESSAGE value="change config then commit" />
     <MESSAGE value="add interceptor" />
     <MESSAGE value="add edit and update sign in" />
-    <option name="LAST_COMMIT_MESSAGE" value="add edit and update sign in" />
+    <MESSAGE value="add viewCount" />
+    <option name="LAST_COMMIT_MESSAGE" value="add viewCount" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
