@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="94f7fc7a-0ce5-4d2d-8a71-0afe08b53ae5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/life/ls/community/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/life/ls/community/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/life/ls/community/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/life/ls/community/controller/IndexController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
     </list>
@@ -27,30 +27,7 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="community" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="community" type="feb32156:DbDataSourceImpl" />
-        <item name="COMMUNITY: database" type="2aa06773:H2ImplModel$Database" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="community" type="feb32156:DbDataSourceImpl" />
-        <item name="COMMUNITY: database" type="2aa06773:H2ImplModel$Database" />
-        <item name="PUBLIC: schema" type="7f85d983:H2ImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="community" type="feb32156:DbDataSourceImpl" />
-        <item name="COMMUNITY: database" type="2aa06773:H2ImplModel$Database" />
-        <item name="PUBLIC: schema" type="7f85d983:H2ImplModel$Schema" />
-        <item name="USER: table" type="818c1b4a:H2ImplModel$Table" />
-      </path>
-    </expand>
+    <expand />
     <select />
   </component>
   <component name="FavoritesManager">
@@ -60,6 +37,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
         <option value="HTML File" />
       </list>
@@ -96,7 +75,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="database.data.extractors.current.id" value="HTML Table" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../community2" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static/images" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -105,9 +85,11 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="RecentsManager">
@@ -115,9 +97,14 @@
       <recent name="life.ls.community" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\code\community\src\main\resources\static\img" />
-      <recent name="C:\code\community\src\main\resources\templates" />
+      <recent name="C:\code\community\src\main\resources\static\images" />
+      <recent name="C:\code\community\src\main\resources\static\js" />
+      <recent name="C:\code\community\src\main\resources\static\css" />
       <recent name="C:\code\community\src\main\resources\static" />
+      <recent name="C:\code\community\src\main\resources\static\img" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\code\community\src\main\resources\static\images" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -132,7 +119,21 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.CommunityApplication">
+    <configuration name="templates in community" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="community" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="templates.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="templates" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CommunityApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="community" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="life.ls.community.CommunityApplication" />
@@ -140,6 +141,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.templates in community" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="allServicesViewState">
@@ -211,7 +217,36 @@
       <workItem from="1578106678725" duration="1641000" />
       <workItem from="1578108399006" duration="146000" />
       <workItem from="1578108745547" duration="2336000" />
-      <workItem from="1578122483989" duration="1992000" />
+      <workItem from="1578122483989" duration="6165000" />
+      <workItem from="1578137593367" duration="1526000" />
+      <workItem from="1578293165980" duration="23599000" />
+      <workItem from="1578381006430" duration="5238000" />
+      <workItem from="1578386820004" duration="7648000" />
+      <workItem from="1578402238020" duration="2823000" />
+      <workItem from="1578468717242" duration="15764000" />
+      <workItem from="1578505538569" duration="853000" />
+      <workItem from="1578561390840" duration="5380000" />
+      <workItem from="1578574270326" duration="1382000" />
+      <workItem from="1578725408910" duration="114000" />
+      <workItem from="1578829056164" duration="10008000" />
+      <workItem from="1578877925499" duration="660000" />
+      <workItem from="1578882402281" duration="1205000" />
+      <workItem from="1578918920430" duration="68000" />
+      <workItem from="1578920138801" duration="403000" />
+      <workItem from="1578922755843" duration="143000" />
+      <workItem from="1578970381154" duration="659000" />
+      <workItem from="1579411265898" duration="77000" />
+      <workItem from="1579432613286" duration="2899000" />
+      <workItem from="1579688209546" duration="1139000" />
+      <workItem from="1580095910796" duration="48000" />
+      <workItem from="1580129772320" duration="611000" />
+      <workItem from="1580182408007" duration="635000" />
+      <workItem from="1580190860462" duration="107000" />
+      <workItem from="1580367715310" duration="11683000" />
+      <workItem from="1580433162847" duration="2492000" />
+      <workItem from="1580436326133" duration="353000" />
+      <workItem from="1580436709569" duration="8377000" />
+      <workItem from="1580451825907" duration="1549000" />
     </task>
     <task id="LOCAL-00001" summary="change config then commit">
       <created>1577014849679</created>
@@ -241,7 +276,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577866032277</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add comments">
+      <created>1578124603813</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1578124603813</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -275,9 +317,24 @@
     <MESSAGE value="add interceptor" />
     <MESSAGE value="add edit and update sign in" />
     <MESSAGE value="add viewCount" />
-    <option name="LAST_COMMIT_MESSAGE" value="add viewCount" />
+    <MESSAGE value="add comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="add comments" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/life/ls/community/service/CommentService.java</url>
+          <line>98</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/life/ls/community/controller/CommentController.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="SpringBootApplicationConfigurationType">
         <watch expression="user" />
@@ -287,5 +344,8 @@
         <watch expression="((Request)((RequestFacade)request).request).response" custom="org.apache.catalina.connector.Request,org.apache.catalina.connector.RequestFacade" />
       </configuration>
     </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/community$CommunityApplication.ic" NAME="CommunityApplication Coverage Results" MODIFIED="1580437225439" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

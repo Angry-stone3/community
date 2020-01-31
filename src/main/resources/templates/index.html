@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>码匠社区-首页</title>
+    <title>学习论坛-首页</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
@@ -43,22 +43,41 @@
             </div>
 
             <!--使用分页-->
-            <nav aria-label="Question results pages">
+            <!--没有使用搜索的-->
+            <nav th:if="${search==null}" aria-label="Question results pages">
                 <p>当前 <span th:text="${pageInfo.pageNum}"></span> 页,总 <span th:text="${pageInfo.pages}"></span> 页,共
                     <span th:text="${pageInfo.total}"></span> 条记录</p>
 
                 <ul class="pagination">
                     <li><a th:href="@{/}">首页</a></li>
                     <li><a th:href="@{/(pageNum=${pageInfo.hasPreviousPage}?${pageInfo.prePage}:1)}">上一页</a></li>
-                    <li class="active"><a th:href="@{/(pageNum=${pageInfo.pageNum})}">[(${pageInfo.pageNum})]<span
-                            class="sr-only">(current)</span></a></li>
+                    <li class="active">
+                        <span>[(${pageInfo.pageNum})]<span
+                                class="sr-only">(current)</span></span>
+                    </li>
                     <li>
                         <a th:href="@{/(pageNum=${pageInfo.hasNextPage}?${pageInfo.nextPage}:${pageInfo.pages})}">下一页</a>
                     </li>
                     <li><a th:href="@{/(pageNum=${pageInfo.pages})}">尾页</a></li>
                 </ul>
             </nav>
-
+            <!--搜索的分页-->
+            <nav th:if="${search!=null}" aria-label="Question results pages">
+                <p>当前 <span th:text="${pageInfo.pageNum}"></span> 页,总 <span th:text="${pageInfo.pages}"></span> 页,共
+                    <span th:text="${pageInfo.total}"></span> 条记录</p>
+                <ul class="pagination">
+                    <li><a th:href="@{/(search=${search})}">首页</a></li>
+                    <li><a th:href="@{/(pageNum=${pageInfo.hasPreviousPage}?${pageInfo.prePage}:1)}">上一页</a></li>
+                    <li class="active">
+                        <span>[(${pageInfo.pageNum})]<span
+                                class="sr-only">(current)</span></span>
+                    </li>
+                    <li>
+                        <a th:href="@{/(pageNum=${pageInfo.hasNextPage}?${pageInfo.nextPage}:${pageInfo.pages},search=${search})}">下一页</a>
+                    </li>
+                    <li><a th:href="@{/(pageNum=${pageInfo.pages},search=${search})}">尾页</a></li>
+                </ul>
+            </nav>
 
         </div>
 
@@ -70,5 +89,7 @@
 
 </div>
 
+<!--引入页尾-->
+<div th:replace="~{footer::foot}"></div>
 </body>
 </html>
