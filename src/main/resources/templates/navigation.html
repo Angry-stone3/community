@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>导航</title>
+    <link rel="stylesheet" href="/css/community.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <script src="/js/community.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-default" th:fragment="nav">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">学习论坛</span>
+            </button>
+            <a class="navbar-brand" href="/">学习论坛</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <form class="navbar-form navbar-left" action="/">
+                <div class="form-group">
+                    <input type="text" name="search" class="form-control"
+                           th:placeholder="${search!=null?search:'搜索问题'}">
+                </div>
+                <button type="submit" class="btn btn-default">搜索</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li th:if="${session.user!=null}"><a href="/publish">提问</a></li>
+                <!--添加通知数-->
+                <li><a href="/profile/replies">通知<span class="badge" th:text="${session.unReadCount}"></span></a></li>
+                <li class="dropdown" th:if="${session.user!=null}">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">
+                        <span th:text="${session.user.getName()}"></span>
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a th:href="@{/profile/questions}">我的问题</a></li>
+                        <li><a th:href="@{/profile/questions}">个人资料</a></li>
+                        <li><a th:href="@{/logout}">退出登录</a></li>
+                    </ul>
+                <li th:if="${session.user==null}"><a
+                        href="https://github.com/login/oauth/authorize?client_id=a59d9015ba71476d171d&redirect_uri=http://localhost:8080/callback&scope=user&state=1"
+                        data-toggle="modal" data-target="#myModal">
+                    <!--使用模态框-->
+                    登录
+                </a>
+                </li>
+                </li>
+
+                <!-- 模态框 -->
+                <div class="modal fade" id="myModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+
+                            <!-- 模态框头部 -->
+                            <div class="modal-header">
+                                <p class="modal-title" style="font-size: 15px; color: #303030;">第三方授权账号登入</p>
+                            </div>
+
+                            <!-- 模态框主体 -->
+                            <div class="login-main">
+                                <span class="qq-login">
+                                    <a href="https://github.com/login/oauth/authorize?client_id=a59d9015ba71476d171d&redirect_uri=http://localhost:8080/callback&scope=user&state=1">
+                                    <button type="button" class="btn btn-inverse">
+                                        <img th:src="@{/images/github.svg}" alt="" width="36" height="36">
+                                        <p style="font-size: 12px">GitHub 登录
+                                        </p>
+                                    </button>
+                                    </a>
+                                </span>
+
+                                <span class="github-login">
+                                    <button type="button" class="btn btn-info" id="qq-login-btn">
+                                        <img th:src="@{/images/qq.svg}" alt="" width="36" height="36">
+                                        <p style="font-size: 12px">QQ登录
+                                        </p>
+                                    </button>
+                                </span>
+                            </div>
+
+                            <!-- 模态框底部 -->
+                            <div class="modal-footer">
+                                <button type="button" id="modal_close" class="btn btn-secondary" data-dismiss="modal">
+                                    关闭
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+</body>
+</html>

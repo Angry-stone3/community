@@ -1,0 +1,198 @@
+body {
+    background-color: #efefef;
+    /*background:url("/images/background/background.jpeg");*/
+}
+
+.main {
+    background-color: white;
+    margin: 30px;
+}
+
+.btn-publish {
+    float: right;
+    margin-bottom: 15px;
+}
+
+
+.media-object {
+    width: 38px;
+    height: 38px;
+}
+
+.media-body {
+    padding-top: 10px;
+}
+
+.text-desc {
+    font-size: 12px;
+    font-weight: normal;
+    color: #999;
+}
+
+.main-left {
+    border-right: solid 1px #eee;
+}
+
+.profile .section {
+    margin-top: 15px;
+}
+
+.jumbotron {
+    margin-left: 50px;
+}
+
+/*评论的输入框*/
+.comment {
+    margin: 10px;
+}
+
+.btn-comment {
+    float: right;
+    margin-bottom: 10px;
+}
+
+.comment-sp {
+    margin-top: 0;
+}
+
+.menu {
+    color: #999;
+    margin-top: 5px;
+}
+
+.menu .active {
+    color: #499ef3;
+}
+
+.menu .icon {
+    margin-right: 6px;
+    font-size: 15px;
+    /*光标处呈现的颜色，pointer表示为手的形状*/
+    cursor: pointer;
+}
+
+.menu .comment-icon {
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.menu .comment-icon :hover {
+    color: #499ef3;
+}
+
+/*鼠标悬浮在这个标签上的颜色*/
+.menu .icon:hover {
+    color: #499ef3;
+}
+
+/*设置回复的遍历的边框*/
+.comments {
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+/*标题*/
+.question_title {
+    margin-top: 30px;
+}
+
+/*二级评论的*/
+.sub-comments {
+    border-radius: 5px;
+    margin-top: 10px;
+    border: 1px solid #eee;
+    padding-top: 15px;
+    margin-bottom: 15px;
+}
+
+.sub-comments .btn {
+    margin: 10px 0;
+}
+
+/*标签*/
+.question-tag {
+    margin-right: 5px;
+}
+
+.community-tag:hover {
+    background-color: #339dff;
+    color: #fff !important;
+    text-decoration-line: none;
+}
+
+.community-tag {
+    text-decoration-line: none;
+    cursor: pointer;
+    display: inline-block;
+    height: 20px;
+    line-height: 16px;
+    padding: 2px 5px;
+    background-color: #99cfff;
+    font-size: 12px;
+    color: #fff !important;
+    border-radius: 4px;
+    margin: 4px;
+}
+
+/*相关问题*/
+.question-related {
+    line-height: 20px;
+    font-size: 12px;
+    margin-left: 0;
+    list-style: none;
+    padding-left: 0;
+}
+
+.publish-tag-tab {
+    display: none;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+.publish-tag-tab .label-info {
+    white-space: normal;
+    margin: 5px;
+    display: inline-block;
+}
+
+.tab-content .tags {
+    cursor: pointer;
+}
+
+/*尾部*/
+
+.footer {
+    text-align: center;
+    font-size: 12px;
+    color: #666;;
+    padding: 0 0 15px 0;
+}
+
+.pages {
+    width: 80px;
+    height: 33.81px;
+    margin-left: 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    color: #337ab7;
+}
+
+/*第三方登录*/
+.login-main{
+    height: 97px;
+}
+.github-login,
+.qq-login{
+float: left;
+    margin-top: 10px;
+    margin-left: 50px;
+}
+
+/*点赞数*/
+.likeCount{
+    margin-left: 1px;
+    font-size: 15px;
+}
+
