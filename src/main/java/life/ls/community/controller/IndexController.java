@@ -20,7 +20,7 @@ public class IndexController {
                         @RequestParam(defaultValue = "1", value = "pageNum", required = false) Integer pageNum,
                         @RequestParam(value = "search", required = false) String search) {
         //返回结果集到页面
-        PageInfo pageInfo = questionService.list(search, pageNum, 3);
+        PageInfo pageInfo = questionService.list(search, pageNum, 5);
         model.addAttribute("pageInfo", pageInfo);
         model.addAttribute("search", search);
         return "index";

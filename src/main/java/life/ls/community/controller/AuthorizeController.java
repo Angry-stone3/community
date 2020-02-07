@@ -6,6 +6,7 @@ import life.ls.community.dto.GitHubUser;
 import life.ls.community.model.User;
 import life.ls.community.provider.GithubProvider;
 import life.ls.community.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -82,6 +83,7 @@ public class AuthorizeController {
         request.getSession().removeAttribute("user");
         Cookie cookie = new Cookie("token",null);
         cookie.setMaxAge(0);
+
         response.addCookie(cookie);
         return "redirect:/";
     }

@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="94f7fc7a-0ce5-4d2d-8a71-0afe08b53ae5" name="Default Changelist" comment="">
+    <list default="true" id="94f7fc7a-0ce5-4d2d-8a71-0afe08b53ae5" name="Default Changelist" comment="add search and so on">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/life/ls/community/controller/AuthorizeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/life/ls/community/controller/AuthorizeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/life/ls/community/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/life/ls/community/controller/IndexController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,9 +40,9 @@
       <list>
         <option value="JavaScript File" />
         <option value="Enum" />
+        <option value="HTML File" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -74,7 +78,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="database.data.extractors.current.id" value="HTML Table" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static/images/background" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -95,11 +99,11 @@
       <recent name="life.ls.community" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\code\community\src\main\resources\static\images\background" />
+      <recent name="C:\code\community\src\main\resources\templates" />
       <recent name="C:\code\community\src\main\resources\static\images" />
       <recent name="C:\code\community\src\main\resources\static\js" />
       <recent name="C:\code\community\src\main\resources\static\css" />
-      <recent name="C:\code\community\src\main\resources\static" />
-      <recent name="C:\code\community\src\main\resources\static\img" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\code\community\src\main\resources\static\images" />
@@ -244,7 +248,25 @@
       <workItem from="1580433162847" duration="2492000" />
       <workItem from="1580436326133" duration="353000" />
       <workItem from="1580436709569" duration="8377000" />
-      <workItem from="1580451825907" duration="2409000" />
+      <workItem from="1580451825907" duration="11194000" />
+      <workItem from="1580473023768" duration="602000" />
+      <workItem from="1580521561794" duration="7194000" />
+      <workItem from="1580554328240" duration="2773000" />
+      <workItem from="1580628827051" duration="16455000" />
+      <workItem from="1580698243346" duration="1848000" />
+      <workItem from="1580703512323" duration="21000" />
+      <workItem from="1580705399892" duration="20492000" />
+      <workItem from="1580775355466" duration="9967000" />
+      <workItem from="1580804711486" duration="1936000" />
+      <workItem from="1580824198811" duration="865000" />
+      <workItem from="1580858006966" duration="1540000" />
+      <workItem from="1580881515619" duration="3104000" />
+      <workItem from="1580892463350" duration="464000" />
+      <workItem from="1580904987906" duration="1073000" />
+      <workItem from="1580909988199" duration="1597000" />
+      <workItem from="1580946346739" duration="952000" />
+      <workItem from="1580947597896" duration="2404000" />
+      <workItem from="1580961866723" duration="5749000" />
     </task>
     <task id="LOCAL-00001" summary="change config then commit">
       <created>1577014849679</created>
@@ -288,7 +310,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580457166279</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add search and so on">
+      <created>1580458032493</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1580458032493</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -331,13 +360,23 @@
       <breakpoints>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/life/ls/community/service/CommentService.java</url>
-          <line>98</line>
+          <line>102</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/life/ls/community/controller/TestController.java</url>
+          <line>9</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
         <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/life/ls/community/controller/CommentController.java</url>
-          <line>46</line>
-          <option name="timeStamp" value="5" />
+          <url>file://$PROJECT_DIR$/src/main/java/life/ls/community/service/CommentService.java</url>
+          <line>130</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/main/resources/templates/publish.html</url>
+          <line>40</line>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -352,6 +391,6 @@
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/community$CommunityApplication.ic" NAME="CommunityApplication Coverage Results" MODIFIED="1580437225439" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/community$CommunityApplication.ic" NAME="CommunityApplication Coverage Results" MODIFIED="1580707366684" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
