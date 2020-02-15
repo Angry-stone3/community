@@ -49,34 +49,38 @@
                     <span th:text="${pageInfo.total}"></span> 条记录</p>
 
                 <ul class="pagination">
-                    <li><a th:href="@{/}">首页</a></li>
-                    <li><a th:href="@{/(pageNum=${pageInfo.hasPreviousPage}?${pageInfo.prePage}:1)}">上一页</a></li>
+                    <li th:if="${pageInfo.hasPreviousPage}"><a th:href="@{/}">首页</a></li>
+                    <li th:if="${pageInfo.hasPreviousPage}"><a
+                            th:href="@{/(pageNum=${pageInfo.hasPreviousPage}?${pageInfo.prePage}:1)}">上一页</a></li>
 
                     <!--当不足5页-->
-                    <li th:if="${pageInfo.pages}<=5" th:each="i:${#numbers.sequence(1, pageInfo.pages)}" th:class="${i==pageInfo.pageNum}?'active':''">
+                    <li th:if="${pageInfo.pages}<=5" th:each="i:${#numbers.sequence(1, pageInfo.pages)}"
+                        th:class="${i==pageInfo.pageNum}?'active':''">
                         <a th:href="@{/(pageNum=${i})}" th:text="${i}"></a>
                     </li>
                     <!--当多于5页-->
-                        <!--当总页数大于5时，且当页小于3，显示前五条-->
-                        <li  th:if="${pageInfo.pages>5&&pageInfo.pageNum<=3}" th:each="i:${#numbers.sequence(1, 5)}" th:class="${i==pageInfo.pageNum}?'active':''">
-                            <a th:href="@{/(pageNum=${i})}" th:text="${i}"></a>
-                        </li>
+                    <!--当总页数大于5时，且当页小于3，显示前五条-->
+                    <li th:if="${pageInfo.pages>5&&pageInfo.pageNum<=3}" th:each="i:${#numbers.sequence(1, 5)}"
+                        th:class="${i==pageInfo.pageNum}?'active':''">
+                        <a th:href="@{/(pageNum=${i})}" th:text="${i}"></a>
+                    </li>
 
-                        <!--当总页数大于5时，且当前页大于3，显示当前页相邻五条-->
-                        <li th:if="${pageInfo.pages>5&&pageInfo.pageNum>3&&(pageInfo.pageNum+2)<=pageInfo.pages}"
-                            th:each="i:${#numbers.sequence((pageInfo.pageNum)-2, (pageInfo.pageNum)+2)}" th:class="${i==pageInfo.pageNum}?'active':''">
-                            <a th:href="@{/(pageNum=${i})}" th:text="${i}"></a>
-                        </li>
-                        <!--当总页数大于5时，且当前页相距最后一页不足2条-->
-                        <li th:if="${pageInfo.pages>5&&pageInfo.pageNum>3&&(pageInfo.pageNum+2)>pageInfo.pages}"
-                            th:each="i:${#numbers.sequence((pageInfo.pageNum)-((((pageInfo.pages)-(pageInfo.pageNum))==1?1:2)+2), pageInfo.pages)}"
-                            th:class="${i==pageInfo.pageNum}?'active':''">
-                            <a th:href="@{/(pageNum=${i})}" th:text="${i}"></a>
-                        </li>
-                    <li>
+                    <!--当总页数大于5时，且当前页大于3，显示当前页相邻五条-->
+                    <li th:if="${pageInfo.pages>5&&pageInfo.pageNum>3&&(pageInfo.pageNum+2)<=pageInfo.pages}"
+                        th:each="i:${#numbers.sequence((pageInfo.pageNum)-2, (pageInfo.pageNum)+2)}"
+                        th:class="${i==pageInfo.pageNum}?'active':''">
+                        <a th:href="@{/(pageNum=${i})}" th:text="${i}"></a>
+                    </li>
+                    <!--当总页数大于5时，且当前页相距最后一页不足2条-->
+                    <li th:if="${pageInfo.pages>5&&pageInfo.pageNum>3&&(pageInfo.pageNum+2)>pageInfo.pages}"
+                        th:each="i:${#numbers.sequence((pageInfo.pageNum)-((((pageInfo.pages)-(pageInfo.pageNum))==1?1:2)+2), pageInfo.pages)}"
+                        th:class="${i==pageInfo.pageNum}?'active':''">
+                        <a th:href="@{/(pageNum=${i})}" th:text="${i}"></a>
+                    </li>
+                    <li th:if="${pageInfo.hasNextPage}">
                         <a th:href="@{/(pageNum=${pageInfo.hasNextPage}?${pageInfo.nextPage}:${pageInfo.pages})}">下一页</a>
                     </li>
-                    <li><a th:href="@{/(pageNum=${pageInfo.pages})}">尾页</a></li>
+                    <li th:if="${pageInfo.hasNextPage}"><a th:href="@{/(pageNum=${pageInfo.pages})}">尾页</a></li>
                 </ul>
             </nav>
 
@@ -85,21 +89,25 @@
                 <p>当前 <span th:text="${pageInfo.pageNum}"></span> 页,总 <span th:text="${pageInfo.pages}"></span> 页,共
                     <span th:text="${pageInfo.total}"></span> 条记录</p>
                 <ul class="pagination">
-                    <li><a th:href="@{/(search=${search})}">首页</a></li>
-                    <li><a th:href="@{/(pageNum=${pageInfo.hasPreviousPage}?${pageInfo.prePage}:1,search=${search})}">上一页</a></li>
+                    <li th:if="${pageInfo.hasPreviousPage}"><a th:href="@{/(search=${search})}">首页</a></li>
+                    <li th:if="${pageInfo.hasPreviousPage}"><a th:href="@{/(pageNum=${pageInfo.hasPreviousPage}?${pageInfo.prePage}:1,search=${search})}">上一页</a>
+                    </li>
                     <!--当小于等于5页-->
-                    <li th:if="${pageInfo.pages}<=5" th:each="i:${#numbers.sequence(1, pageInfo.pages)}" th:class="${i==pageInfo.pageNum}?'active':''">
+                    <li th:if="${pageInfo.pages}<=5" th:each="i:${#numbers.sequence(1, pageInfo.pages)}"
+                        th:class="${i==pageInfo.pageNum}?'active':''">
                         <a th:href="@{/(pageNum=${i},search=${search})}" th:text="${i}"></a>
                     </li>
                     <!--当多于5页-->
-                        <!--当总页数大于5时，且当页小于3，显示前五条-->
-                    <li  th:if="${pageInfo.pages>5&&pageInfo.pageNum<=3}" th:each="i:${#numbers.sequence(1, 5)}" th:class="${i==pageInfo.pageNum}?'active':''">
+                    <!--当总页数大于5时，且当页小于3，显示前五条-->
+                    <li th:if="${pageInfo.pages>5&&pageInfo.pageNum<=3}" th:each="i:${#numbers.sequence(1, 5)}"
+                        th:class="${i==pageInfo.pageNum}?'active':''">
                         <a th:href="@{/(pageNum=${i},search=${search})}" th:text="${i}"></a>
                     </li>
 
                     <!--当总页数大于5时，且当前页大于3，显示当前页相邻五条-->
                     <li th:if="${pageInfo.pages>5&&pageInfo.pageNum>3&&(pageInfo.pageNum+2)<=pageInfo.pages}"
-                        th:each="i:${#numbers.sequence((pageInfo.pageNum)-2, (pageInfo.pageNum)+2)}" th:class="${i==pageInfo.pageNum}?'active':''">
+                        th:each="i:${#numbers.sequence((pageInfo.pageNum)-2, (pageInfo.pageNum)+2)}"
+                        th:class="${i==pageInfo.pageNum}?'active':''">
                         <a th:href="@{/(pageNum=${i},search=${search})}" th:text="${i}"></a>
                     </li>
                     <!--当总页数大于5时，且当前页相距最后一页不足2条-->
@@ -108,10 +116,10 @@
                         th:class="${i==pageInfo.pageNum}?'active':''">
                         <a th:href="@{/(pageNum=${i},search=${search})}" th:text="${i}"></a>
                     </li>
-                    <li>
+                    <li  th:if="${pageInfo.hasNextPage}">
                         <a th:href="@{/(pageNum=${pageInfo.hasNextPage}?${pageInfo.nextPage}:${pageInfo.pages},search=${search})}">下一页</a>
                     </li>
-                    <li><a th:href="@{/(pageNum=${pageInfo.pages},search=${search})}">尾页</a></li>
+                    <li  th:if="${pageInfo.hasNextPage}"><a th:href="@{/(pageNum=${pageInfo.pages},search=${search})}">尾页</a></li>
                 </ul>
             </nav>
 
