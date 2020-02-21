@@ -1,8 +1,10 @@
 package life.ls.community.interceptor;
 
+import life.ls.community.dto.UserDTO;
 import life.ls.community.mapper.UserMapper;
 import life.ls.community.model.User;
 import life.ls.community.service.NotificationService;
+import life.ls.community.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -17,9 +19,10 @@ import javax.servlet.http.HttpServletResponse;
 @Component
 public class SessionInterceptor implements HandlerInterceptor {
     @Autowired
-    private UserMapper userMapper;
+    private UserService userService;
     @Autowired
     private NotificationService notificationService;
+
     //方法执行前
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
@@ -34,13 +37,13 @@ public class SessionInterceptor implements HandlerInterceptor {
                     String token = cookie.getValue();
 //                    System.out.println("当前账户的token"+token);
                     //2.2根据token去数据库红查询
-                    User user = userMapper.findUserByToken(token);
+                    UserDTO userDTO = userService.findUserByToken(token);
                     //2.3判断用户是否存在
-                    if (user != null) {
+                    if (userDTO != null) {
                         //2.4保存数据到session
-                        request.getSession().setAttribute("user", user);
+                        request.getSession().setAttribute("user", userDTO);
                         //查询用户通知数
-                        Integer unReadCount = notificationService.unRead(user.getId());
+                        Integer unReadCount = notificationService.unRead(userDTO.getId());
                         request.getSession().setAttribute("unReadCount", unReadCount);
                         break;
                     }

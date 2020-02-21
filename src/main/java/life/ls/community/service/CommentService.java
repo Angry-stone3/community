@@ -25,6 +25,7 @@ import java.util.List;
  * 业务层：评论的
  */
 @Service
+@Transactional
 public class CommentService {
     @Autowired
     private CommentMapper commentMapper;
@@ -132,6 +133,25 @@ public class CommentService {
         } else {
             //否则不能点赞
             return -1;
+        }
+    }
+    
+    //删除评论和二级评论
+    public void deleteById(Long parentId) {
+        //先判断是否存在
+        List<Comment> commentsDb = commentMapper.findCommentByQueId(parentId);
+        if(commentsDb!=null) {
+            //先删除二级评论和点赞
+            for (Comment comment : commentsDb) {
+                commentMapper.deleteSecondCommentByParentId(comment.getId());;
+            }
+            //删除点赞关系和一级评论
+            //通过父类的id和类型查询ids
+            for(Long commentId :commentMapper.findIdsByParentIdAndType1(parentId)){
+                //通过评论的id删除点赞关系
+                likesMapper.deleteByCommentId(commentId);
+            }
+            commentMapper.deleteByQueId(parentId);
         }
     }
 }

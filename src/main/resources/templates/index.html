@@ -3,11 +3,11 @@
 <head>
     <title>学习论坛-首页</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="css/community.css">
-    <script src="js/jquery-3.1.1.min.js"></script>
-    <script src="js/bootstrap.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/css/community.css">
+    <script src="/js/jquery-3.1.1.min.js"></script>
+    <script src="/js/bootstrap.js"></script>
 </head>
 <script type="text/javascript">
     var result = window.localStorage.getItem("closeable");
@@ -44,7 +44,7 @@
 
             <!--使用分页-->
             <!--没有使用搜索的-->
-            <nav th:if="${search==null}" aria-label="Question results pages">
+            <nav th:if="${search==null&&tag==null}" aria-label="Question results pages">
                 <p>当前 <span th:text="${pageInfo.pageNum}"></span> 页,总 <span th:text="${pageInfo.pages}"></span> 页,共
                     <span th:text="${pageInfo.total}"></span> 条记录</p>
 
@@ -85,12 +85,13 @@
             </nav>
 
             <!--搜索的分页-->
-            <nav th:if="${search!=null}" aria-label="Question results pages">
+            <nav th:if="${search!=null&&tag==null}" aria-label="Question results pages">
                 <p>当前 <span th:text="${pageInfo.pageNum}"></span> 页,总 <span th:text="${pageInfo.pages}"></span> 页,共
                     <span th:text="${pageInfo.total}"></span> 条记录</p>
                 <ul class="pagination">
                     <li th:if="${pageInfo.hasPreviousPage}"><a th:href="@{/(search=${search})}">首页</a></li>
-                    <li th:if="${pageInfo.hasPreviousPage}"><a th:href="@{/(pageNum=${pageInfo.hasPreviousPage}?${pageInfo.prePage}:1,search=${search})}">上一页</a>
+                    <li th:if="${pageInfo.hasPreviousPage}"><a
+                            th:href="@{/(pageNum=${pageInfo.hasPreviousPage}?${pageInfo.prePage}:1,search=${search})}">上一页</a>
                     </li>
                     <!--当小于等于5页-->
                     <li th:if="${pageInfo.pages}<=5" th:each="i:${#numbers.sequence(1, pageInfo.pages)}"
@@ -116,18 +117,78 @@
                         th:class="${i==pageInfo.pageNum}?'active':''">
                         <a th:href="@{/(pageNum=${i},search=${search})}" th:text="${i}"></a>
                     </li>
-                    <li  th:if="${pageInfo.hasNextPage}">
+                    <li th:if="${pageInfo.hasNextPage}">
                         <a th:href="@{/(pageNum=${pageInfo.hasNextPage}?${pageInfo.nextPage}:${pageInfo.pages},search=${search})}">下一页</a>
                     </li>
-                    <li  th:if="${pageInfo.hasNextPage}"><a th:href="@{/(pageNum=${pageInfo.pages},search=${search})}">尾页</a></li>
+                    <li th:if="${pageInfo.hasNextPage}"><a
+                            th:href="@{/(pageNum=${pageInfo.pages},search=${search})}">尾页</a></li>
                 </ul>
             </nav>
 
+            <!--标签的分页-->
+            <nav th:if="${tag!=null}" aria-label="Question results pages">
+                <p>当前 <span th:text="${pageInfo.pageNum}"></span> 页,总 <span th:text="${pageInfo.pages}"></span> 页,共
+                    <span th:text="${pageInfo.total}"></span> 条记录</p>
+                <ul class="pagination">
+                    <li th:if="${pageInfo.hasPreviousPage}"><a th:href="@{/tag/(tag=${tag})}">首页</a></li>
+                    <li th:if="${pageInfo.hasPreviousPage}"><a
+                            th:href="@{/tag/(pageNum=${pageInfo.hasPreviousPage}?${pageInfo.prePage}:1,tag=${tag})}">上一页</a>
+                    </li>
+                    <!--当小于等于5页-->
+                    <li th:if="${pageInfo.pages}<=5" th:each="i:${#numbers.sequence(1, pageInfo.pages)}"
+                        th:class="${i==pageInfo.pageNum}?'active':''">
+                        <a th:href="@{/tag/(pageNum=${i},tag=${tag})}" th:text="${i}"></a>
+                    </li>
+                    <!--当多于5页-->
+                    <!--当总页数大于5时，且当页小于3，显示前五条-->
+                    <li th:if="${pageInfo.pages>5&&pageInfo.pageNum<=3}" th:each="i:${#numbers.sequence(1, 5)}"
+                        th:class="${i==pageInfo.pageNum}?'active':''">
+                        <a th:href="@{/tag/(pageNum=${i},tag=${tag})}" th:text="${i}"></a>
+                    </li>
+
+                    <!--当总页数大于5时，且当前页大于3，显示当前页相邻五条-->
+                    <li th:if="${pageInfo.pages>5&&pageInfo.pageNum>3&&(pageInfo.pageNum+2)<=pageInfo.pages}"
+                        th:each="i:${#numbers.sequence((pageInfo.pageNum)-2, (pageInfo.pageNum)+2)}"
+                        th:class="${i==pageInfo.pageNum}?'active':''">
+                        <a th:href="@{/tag/(pageNum=${i},tag=${tag})}" th:text="${i}"></a>
+                    </li>
+                    <!--当总页数大于5时，且当前页相距最后一页不足2条-->
+                    <li th:if="${pageInfo.pages>5&&pageInfo.pageNum>3&&(pageInfo.pageNum+2)>pageInfo.pages}"
+                        th:each="i:${#numbers.sequence((pageInfo.pageNum)-((((pageInfo.pages)-(pageInfo.pageNum))==1?1:2)+2), pageInfo.pages)}"
+                        th:class="${i==pageInfo.pageNum}?'active':''">
+                        <a th:href="@{/tag/(pageNum=${i},tag=${tag})}" th:text="${i}"></a>
+                    </li>
+                    <li th:if="${pageInfo.hasNextPage}">
+                        <a th:href="@{/tag/(pageNum=${pageInfo.hasNextPage}?${pageInfo.nextPage}:${pageInfo.pages},tag=${tag})}">下一页</a>
+                    </li>
+                    <li th:if="${pageInfo.hasNextPage}"><a
+                            th:href="@{/tag/(pageNum=${pageInfo.pages},tag=${tag})}">尾页</a></li>
+                </ul>
+            </nav>
         </div>
 
 
         <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
-            <h3>热门话题</h3>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <h4>热门标签</h4>
+                <!--     <a th:each="tag : ${tags}" th:href="@{/(page=1,search=${search},tag=${tag},sort=${sort})}"
+                        th:text="${tag}" class="community-tag"></a>-->
+
+                <div class="question-tag" th:each="hotTag:${hotTags}">
+                    <a th:href="@{/tag/(tag=${hotTag.getKey()})}">
+                        <spn class="label label-info">
+                            <span class="glyphicon glyphicon-tags"></span>
+                            <span class="label label-info" th:text="${hotTag.getKey()}"></span>
+                        </spn>
+                    </a>
+                    <p class="hotTagId">
+                        <span th:text="${hotTag.value.getQuestionCount()}"></span> 个问题,
+                        <span th:text="${hotTag.value.getCommentCount()}"></span> 回复
+                    </p>
+                </div>
+
+
+            </div>
         </div>
     </div>
 

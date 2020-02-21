@@ -81,6 +81,7 @@ public class AuthorizeController {
     public String logout(HttpServletRequest request,HttpServletResponse response){
         //清空cookie以及去除session中user
         request.getSession().removeAttribute("user");
+        request.getSession().removeAttribute("unReadCount");
         Cookie cookie = new Cookie("token",null);
         cookie.setMaxAge(0);
 

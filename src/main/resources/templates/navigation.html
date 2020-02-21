@@ -46,8 +46,7 @@
                 </li>
                 <li><a th:href="@{/user/register}">注册</a></li>
                 <li th:if="${session.user==null}"><a
-                        th:href="@{/user/signUp}"
-                        data-toggle="modal" data-target="#myModal"
+                        href="https://github.com/login/oauth/authorize?client_id=a59d9015ba71476d171d&redirect_uri=http://localhost:8080/callback&scope=user&state=1",
                         id="login-link">
                     登录
                 </a>

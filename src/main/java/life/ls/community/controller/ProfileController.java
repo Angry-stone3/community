@@ -2,6 +2,7 @@ package life.ls.community.controller;
 
 import com.github.pagehelper.PageInfo;
 import life.ls.community.dto.NotificationDTO;
+import life.ls.community.dto.UserDTO;
 import life.ls.community.exception.CustomizeErrorCode;
 import life.ls.community.exception.CustomizeException;
 import life.ls.community.mapper.UserMapper;
@@ -33,7 +34,7 @@ public class ProfileController {
                           @RequestParam(name = "pageSize", defaultValue = "5", required = false) Integer pageSize,
                           Model model) {
         //判断是否登录
-        User user = (User) request.getSession().getAttribute("user");
+        UserDTO user = (UserDTO) request.getSession().getAttribute("user");
         //为空返回到首页
         if (user == null) {
             throw new CustomizeException(CustomizeErrorCode.NO_LOGIN);

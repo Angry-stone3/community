@@ -1,10 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="94f7fc7a-0ce5-4d2d-8a71-0afe08b53ae5" name="Default Changelist" comment="item over">
+    <list default="true" id="94f7fc7a-0ce5-4d2d-8a71-0afe08b53ae5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/community-log/spring.log" beforeDir="false" afterPath="$PROJECT_DIR$/community-log/spring.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/life/ls/community/CommunityApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/life/ls/community/CommunityApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/life/ls/community/controller/AuthorizeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/life/ls/community/controller/AuthorizeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/life/ls/community/controller/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/life/ls/community/controller/CommentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/life/ls/community/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/life/ls/community/controller/IndexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/life/ls/community/controller/NotificationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/life/ls/community/controller/NotificationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/life/ls/community/controller/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/life/ls/community/controller/ProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/life/ls/community/controller/PublishController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/life/ls/community/controller/PublishController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/life/ls/community/dto/QuestionDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/life/ls/community/dto/QuestionDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/life/ls/community/dto/ResultDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/life/ls/community/dto/ResultDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/life/ls/community/exception/CustomizeErrorCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/life/ls/community/exception/CustomizeErrorCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/life/ls/community/interceptor/SessionInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/life/ls/community/interceptor/SessionInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/life/ls/community/interceptor/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/life/ls/community/interceptor/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/life/ls/community/mapper/CommentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/life/ls/community/mapper/CommentMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/life/ls/community/mapper/LikesMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/life/ls/community/mapper/LikesMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/life/ls/community/mapper/QuestionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/life/ls/community/mapper/QuestionMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/life/ls/community/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/life/ls/community/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/life/ls/community/service/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/life/ls/community/service/CommentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/life/ls/community/service/QuestionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/life/ls/community/service/QuestionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/life/ls/community/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/life/ls/community/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/community.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/community.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/community.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/community.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/footer.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/navigation.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/navigation.html" afterDir="false" />
     </list>
@@ -40,6 +61,7 @@
         <option value="JavaScript File" />
         <option value="Enum" />
         <option value="Interface" />
+        <option value="FxmlFile" />
         <option value="HTML File" />
         <option value="Class" />
       </list>
@@ -77,7 +99,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="database.data.extractors.current.id" value="HTML Table" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/jquery" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -94,21 +116,22 @@
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\code\community\src\main\resources\static\css" />
-      <recent name="C:\code\community\src\main\resources\static\css\my" />
-      <recent name="C:\code\community\src\main\resources\static\images\my" />
-      <recent name="C:\code\community\src\main\resources\static\images" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="life.ls.community" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\code\community\src\main\resources\static\admin\images" />
+      <recent name="C:\code\community\src\main\resources\resources" />
+      <recent name="C:\code\community\src\main\resources\static\admin" />
+      <recent name="C:\code\community\src\main\resources\templates\admin" />
       <recent name="C:\code\community\src\main\resources\templates" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\code\community\src\main\resources\static\admin" />
+      <recent name="C:\code\community\src\main\resources\static\admin\css" />
+      <recent name="C:\code\community\src\main\resources\static" />
+      <recent name="C:\code\community\src\main\resources\static\css" />
       <recent name="C:\code\community\src\main\resources\static\css\my" />
-      <recent name="C:\code\community\src\main\resources\static\images\background" />
-      <recent name="C:\code\community\src\main\resources\static\images" />
-      <recent name="C:\code\community\src\main\resources\static\js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -272,7 +295,25 @@
       <workItem from="1581077935902" duration="3540000" />
       <workItem from="1581120498057" duration="23000" />
       <workItem from="1581669141230" duration="9505000" />
-      <workItem from="1581746942224" duration="3154000" />
+      <workItem from="1581746942224" duration="17397000" />
+      <workItem from="1581820995759" duration="12000000" />
+      <workItem from="1581836720843" duration="10725000" />
+      <workItem from="1581848160715" duration="5944000" />
+      <workItem from="1581854562869" duration="2732000" />
+      <workItem from="1581857370203" duration="248000" />
+      <workItem from="1581900559074" duration="1623000" />
+      <workItem from="1581911911990" duration="5283000" />
+      <workItem from="1581923348480" duration="17000" />
+      <workItem from="1581937473874" duration="4381000" />
+      <workItem from="1581944797487" duration="312000" />
+      <workItem from="1581987833056" duration="19998000" />
+      <workItem from="1582074621799" duration="15345000" />
+      <workItem from="1582111348746" duration="1036000" />
+      <workItem from="1582160444739" duration="14696000" />
+      <workItem from="1582183384623" duration="4817000" />
+      <workItem from="1582188782553" duration="4015000" />
+      <workItem from="1582195672809" duration="770000" />
+      <workItem from="1582270244653" duration="819000" />
     </task>
     <task id="LOCAL-00001" summary="change config then commit">
       <created>1577014849679</created>
@@ -330,7 +371,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581078027879</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="pagehelper update">
+      <created>1581750367194</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1581750367194</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -367,30 +415,21 @@
     <MESSAGE value="add comments" />
     <MESSAGE value="add search and so on" />
     <MESSAGE value="item over" />
-    <option name="LAST_COMMIT_MESSAGE" value="item over" />
+    <MESSAGE value="pagehelper update" />
+    <option name="LAST_COMMIT_MESSAGE" value="pagehelper update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/life/ls/community/service/CommentService.java</url>
-          <line>102</line>
+          <line>103</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/life/ls/community/controller/TestController.java</url>
           <line>9</line>
           <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/life/ls/community/service/CommentService.java</url>
-          <line>130</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/main/resources/templates/publish.html</url>
-          <line>40</line>
-          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

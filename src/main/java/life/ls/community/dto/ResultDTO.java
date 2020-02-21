@@ -43,4 +43,9 @@ public class ResultDTO<T> {
         return resultDTO;
     }
 
+    public static ResultDTO stopOf() {
+        return errorOf(400,"你已经被禁言,请联系管理员");
+    }
+
+
 }

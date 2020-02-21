@@ -112,7 +112,14 @@ body {
 
 /*标签*/
 .question-tag {
+    width: 100%;
+    height: 32px;
     margin-right: 5px;
+    margin-bottom: 10px;
+}
+.question-tag a{
+    cursor:pointer;
+    text-decoration:none;
 }
 
 .community-tag:hover {
@@ -180,19 +187,27 @@ body {
 }
 
 /*第三方登录*/
-.login-main{
+.login-main {
     height: 97px;
 }
+
 .github-login,
-.qq-login{
-float: left;
+.qq-login {
+    float: left;
     margin-top: 10px;
     margin-left: 50px;
 }
 
 /*点赞数*/
-.likeCount{
+.likeCount {
     margin-left: 1px;
     font-size: 15px;
 }
 
+/*热门话题*/
+.hotTagId {
+    color: #999;
+    font-size: 10px;
+    margin-top: 5px;
+    text-align: left;
+}

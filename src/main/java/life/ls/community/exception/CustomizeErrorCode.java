@@ -14,7 +14,14 @@ public enum CustomizeErrorCode implements ICustomizeErrorCode {
     COMMENT_IS_EMPTY(2007, "评论的内容不能为空"),
     READ_NOTIFICATION_FAIL(2008,"兄弟你这是别人的信息呢?"),
     NOTIFICATION_NOT_FOUND(2009,"哎呦！通知不存在了"),
-    MESSAGE_NOT_FOUND(2010,"出错啦！消息莫非不翼而飞");
+    MESSAGE_NOT_FOUND(2010,"出错啦！消息莫非不翼而飞"),
+    TAG_NOT_FOUND(2011,"这个标签不对哦！"),
+    ADMIN_NOT_UNIQUE(2012,"见鬼了，管理员账户重复"),
+    ADMIN_NOT_FOUND(2013,"这个人不在人间，哈哈！"),
+    ADMIN_NOT_LOGIN(2014,"你想弄啥，你还没登录呢"),
+    ADMIN_NOT_CHOOSE(2015,"未选择要删除的管理员"),
+    ADMIN_NOT_DELETE(2016,"这个管理员不能受伤"),
+    USER_NOT_FOUND(2017,"用户不存在！");
 
     private Integer code;
     private String message;

@@ -1,15 +1,15 @@
 package life.ls.community.controller;
 
-import java.util.HashMap;
 
 import life.ls.community.dto.CommentCreateDTO;
 import life.ls.community.dto.CommentDTO;
 import life.ls.community.dto.ResultDTO;
+import life.ls.community.dto.UserDTO;
 import life.ls.community.enums.CommentTypeEnum;
+import life.ls.community.enums.UserStateEnum;
 import life.ls.community.exception.CustomizeErrorCode;
 import life.ls.community.model.Comment;
 import life.ls.community.model.Likes;
-import life.ls.community.model.User;
 import life.ls.community.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -34,10 +34,17 @@ public class CommentController {
     @ResponseBody
     public Object post(@RequestBody CommentCreateDTO commentCreateDTO,
                        HttpServletRequest request) {
-        User user = (User) request.getSession().getAttribute("user");
+        UserDTO user = (UserDTO) request.getSession().getAttribute("user");
         //判断用户是否登录
         if (user == null) {
             return ResultDTO.errorOf(CustomizeErrorCode.NO_LOGIN);
+        }
+        if (user.getStatus() != null) {
+            //判断是否被禁言
+            String state = user.getStatus().getState();
+            if (UserStateEnum.PROHIBIT.getValue().equals(state)) {
+                return ResultDTO.stopOf();
+            }
         }
         //评论的内容不能为空
         if (commentCreateDTO.equals(null) || StringUtils.isEmpty(commentCreateDTO.getContent())) {
@@ -71,7 +78,7 @@ public class CommentController {
     public Integer like(@RequestBody @RequestParam("commentId") Long commentId,
                         HttpServletRequest request) {
         //获取session
-        User user = (User) request.getSession().getAttribute("user");
+        UserDTO user = (UserDTO) request.getSession().getAttribute("user");
         if (user == null) {
             return -2;
         } else {

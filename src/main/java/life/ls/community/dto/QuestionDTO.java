@@ -25,4 +25,5 @@ public class QuestionDTO {
     private User user;
     //对问题的评论
     private List<CommentDTO> comments;
+
 }

@@ -1,6 +1,9 @@
 package life.ls.community.controller;
 
 import life.ls.community.cache.TagCache;
+import life.ls.community.dto.ResultDTO;
+import life.ls.community.dto.UserDTO;
+import life.ls.community.enums.UserStateEnum;
 import life.ls.community.model.Question;
 import life.ls.community.model.User;
 import life.ls.community.service.QuestionService;
@@ -39,7 +42,18 @@ public class PublishController {
                           HttpServletRequest request,
                           Model model) {
         //判断是否登录
-        User user = (User) request.getSession().getAttribute("user");
+        UserDTO user = (UserDTO) request.getSession().getAttribute("user");
+        //判断是否被禁言
+        if (user.getStatus() != null) {
+            //判断是否被禁言
+            String state = user.getStatus().getState();
+            if (UserStateEnum.PROHIBIT.getValue().equals(state)) {
+                //错误信息
+                model.addAttribute("error","你已经被禁言请联系管理员");
+                return "publish";
+            }
+        }
+
         //如果登录那么就保存问题，否则就返回到请求页面
         if (user != null) {
             //判断写入的标签是否和标签库的内容一致

@@ -1,10 +1,11 @@
 package life.ls.community.mapper;
 
+import com.github.pagehelper.PageInfo;
+import life.ls.community.dto.UserDTO;
 import life.ls.community.model.User;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
+
+import java.util.List;
 
 /**
  * 持久层：用户的mapper接口
@@ -20,6 +21,7 @@ public interface UserMapper {
 
     /**
      * 通过token查询用户是否存在
+     *
      * @param token
      */
     @Select("select * from user where token=#{token}")
@@ -27,14 +29,18 @@ public interface UserMapper {
 
     /**
      * 根据id查询用户信息
+     *
      * @param id
      * @return
      */
     @Select("select * from user where id=#{id}")
-    User findById(Long id);
+    @ResultMap("userMap")
+    UserDTO findById(Long id);
+
 
     /**
      * 通过accountId查询用户
+     *
      * @param accountId
      * @return
      */
@@ -43,6 +49,7 @@ public interface UserMapper {
 
     /**
      * 插入数据
+     *
      * @param user
      */
     @Insert("insert into user(account_id,name,token,gmt_create,gmt_modified,avatar_url)" +
@@ -51,6 +58,7 @@ public interface UserMapper {
 
     /**
      * 更新用户
+     *
      * @param dbUser
      */
     @Update("update user set name =#{name},token=#{token},gmt_modified=#{gmtModified},avatar_url=#{avatarUrl}" +
@@ -60,8 +68,28 @@ public interface UserMapper {
 
     /**
      * 只查询用户信息
+     *
      * @param id
      */
     @Select("select * from user where id=#{id}")
     User findUserById(Long id);
+
+
+    /**
+     * 查询所有用户及其地位
+     *
+     * @return
+     */
+    @Select("select * from user")
+    @Results(id = "userMap",value = {
+            @Result(id = true, property = "id", column = "id"),
+            @Result(property = "accountId", column = "account_id"),
+            @Result(property = "name", column = "name"),
+            @Result(property = "token", column ="token"),
+            @Result(property ="gmtCreate", column ="gmt_create"),
+            @Result(property ="gmtModified", column ="gmt_modified"),
+            @Result(property ="avatarUrl", column ="avatar_url"),
+            @Result(property = "status",column ="id",one = @One(select = "life.ls.community.mapper.StatusMapper.findById"))
+    })
+    List<UserDTO> findAllUser();
 }

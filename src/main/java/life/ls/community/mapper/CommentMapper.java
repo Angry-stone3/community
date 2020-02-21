@@ -15,7 +15,7 @@ public interface CommentMapper {
             "values(#{parentId},#{type},#{commentator},#{gmtCreate},#{gmtModified},#{content})")
     void insert(Comment comment);
 
-    //查询问题
+    //查询的是评论的父类是评论
     @Select("select * from comment where id=#{id}")
     Comment findCommentByParentId(Long parentId);
 
@@ -61,4 +61,19 @@ public interface CommentMapper {
 
     @Update("update comment set like_count=like_count+1 where id=#{commentId}")
     Integer addLikeCount(Long commentId);
+
+    //查询的是评论的父类是问题
+    @Select("select * from comment where parent_id=#{QueId} and type=1")
+    List<Comment> findCommentByQueId(Long QueId);
+
+    //删除一级评论
+    @Delete("delete from comment where parent_id=#{id} and type=1")
+    void deleteByQueId(Long id);
+
+    //删除二级评论
+    @Delete("delete from comment where parent_id=#{id} and type=2")
+    void deleteSecondCommentByParentId(Long id);
+    //查询类型为1的评论的id集合
+    @Select("select * from comment where parent_id=#{parentId} and type=1")
+    List<Long> findIdsByParentIdAndType1(Long parentId);
 }
