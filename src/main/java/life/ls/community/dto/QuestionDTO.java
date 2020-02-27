@@ -4,6 +4,7 @@ import life.ls.community.model.Comment;
 import life.ls.community.model.User;
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -11,7 +12,7 @@ import java.util.List;
  * Data Transfer Object(DTO)
  */
 @Data
-public class QuestionDTO {
+public class QuestionDTO implements Serializable {
     private Long id;
     private String title;
     private String description;

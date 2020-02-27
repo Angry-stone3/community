@@ -2,6 +2,7 @@ package life.ls.community.dto;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -9,7 +10,7 @@ import java.util.Date;
  * 数据传输对象
  */
 @Data
-public class NotificationDTO {
+public class NotificationDTO implements Serializable {
     private Long id;
     private Long notifier;
     private String notifierName;

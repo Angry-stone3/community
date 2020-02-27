@@ -2,13 +2,14 @@ package life.ls.community.model;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * 评论的实体类
  */
 @Data
-public class Comment {
+public class Comment implements Serializable {
     private Long id;
     private Long parentId;
     private Integer type;

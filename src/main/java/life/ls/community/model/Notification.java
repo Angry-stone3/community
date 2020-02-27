@@ -2,13 +2,14 @@ package life.ls.community.model;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * 通知的实体类
  */
 @Data
-public class Notification {
+public class Notification implements Serializable {
     private Long id;
     private Long notifier;
     private Long receiver;

@@ -4,11 +4,13 @@ import life.ls.community.exception.CustomizeException;
 import life.ls.community.exception.ICustomizeErrorCode;
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
  * 返回到页面的信息封装
  */
 @Data
-public class ResultDTO<T> {
+public class ResultDTO<T> implements Serializable {
     private Integer code;
     private String message;
     private T data;

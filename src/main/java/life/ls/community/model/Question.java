@@ -2,6 +2,7 @@ package life.ls.community.model;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -9,7 +10,7 @@ import java.util.Date;
  * 发帖子时保存的信息
  */
 @Data
-public class Question {
+public class Question implements Serializable {
     private Long id;
     private String title;
     private String description;

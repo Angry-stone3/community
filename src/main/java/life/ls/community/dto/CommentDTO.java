@@ -3,9 +3,10 @@ package life.ls.community.dto;
 import life.ls.community.model.User;
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.Date;
 @Data
-public class CommentDTO {
+public class CommentDTO implements Serializable {
     private Long id;
     private Long parentId;
     private Integer type;
