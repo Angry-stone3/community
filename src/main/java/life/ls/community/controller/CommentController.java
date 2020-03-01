@@ -42,7 +42,7 @@ public class CommentController {
         if (user.getStatus() != null) {
             //判断是否被禁言
             String state = user.getStatus().getState();
-            if (UserStateEnum.PROHIBIT.getValue().equals(state)) {
+            if (UserStateEnum.PROHIBIT.getName().equals(state)) {
                 return ResultDTO.stopOf();
             }
         }

@@ -31,6 +31,7 @@
             </form>
             <ul class="nav navbar-nav navbar-right">
                 <li th:if="${session.user!=null}"><a href="/publish">提问</a></li>
+                <li><a th:href="@{/register}">注册</a></li>
                 <!--添加通知数-->
                 <li><a href="/profile/replies">通知<span class="badge" th:text="${session.unReadCount}"></span></a></li>
                 <li class="dropdown" th:if="${session.user!=null}">
@@ -44,7 +45,6 @@
                         <li><a th:href="@{/logout}">退出登录</a></li>
                     </ul>
                 </li>
-                <li><a th:href="@{/user/register}">注册</a></li>
                 <li th:if="${session.user==null}"><a
                         href="https://github.com/login/oauth/authorize?client_id=a59d9015ba71476d171d&redirect_uri=http://localhost:8080/callback&scope=user&state=1",
                         id="login-link">
@@ -56,5 +56,8 @@
     </div>
 </nav>
 
+
+
+<!--登录-->
 </body>
 </html>

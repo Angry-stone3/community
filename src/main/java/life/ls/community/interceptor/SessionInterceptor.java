@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -46,6 +47,13 @@ public class SessionInterceptor implements HandlerInterceptor {
                         Integer unReadCount = notificationService.unRead(userDTO.getId());
                         request.getSession().setAttribute("unReadCount", unReadCount);
                         break;
+                    } else {
+                        //清空cookie以及去除session中user
+                        request.getSession().removeAttribute("user");
+                        request.getSession().removeAttribute("unReadCount");
+                        Cookie cookie2 = new Cookie("token", null);
+                        cookie.setMaxAge(0);
+                        response.addCookie(cookie2);
                     }
                 }
             }
@@ -58,6 +66,7 @@ public class SessionInterceptor implements HandlerInterceptor {
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
 
     }
+
     //方法的结束后
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {

@@ -47,8 +47,8 @@ public class UserService {
             //插入用户身份的关联数据
             Status status = new Status();
             status.setUserId(user.getId());//对应的用户
-            status.setState(UserStateEnum.NORMAL);//对应的状态
-            status.setThird(UserStateEnum.IS_THRID);//是否是第三方
+            status.setState(UserStateEnum.NORMAL.getName());//对应的状态
+            status.setThird(UserStateEnum.IS_THRID.getName());//是否是第三方
             statusMapper.insert(status);
         } else {
             //存在，那么就更新状态
@@ -74,10 +74,13 @@ public class UserService {
     //查找用户和其状态
     public UserDTO findUserByToken(String token) {
         User user = userMapper.findUserByToken(token);
+        if (user == null) {
+            return null;
+        }
         UserDTO userDTO = new UserDTO();
         BeanUtils.copyProperties(user, userDTO);
         //查询对应的状态
-        Status statusDb = statusMapper.findById(user.getId());
+        Status statusDb = statusMapper.findByUId(user.getId());
         userDTO.setStatus(statusDb);
         return userDTO;
     }
@@ -86,17 +89,23 @@ public class UserService {
     public void stopOrActiveUserByUserId(Long id) {
         //判断用户是否存在
         UserDTO userDb = userMapper.findById(id);
-        if(userDb==null){
+        if (userDb == null) {
             throw new CustomizeException(CustomizeErrorCode.USER_NOT_FOUND);
         }
         //根据状态更改
         String state = userDb.getStatus().getState();
-        if(state.equals(UserStateEnum.NORMAL.getValue())){
-            state=UserStateEnum.PROHIBIT.getName();
-        }else{
-            state=UserStateEnum.NORMAL.getName();
+        if (state.equals(UserStateEnum.NORMAL.getName())) {
+            state = UserStateEnum.PROHIBIT.getName();
+        } else {
+            state = UserStateEnum.NORMAL.getName();
         }
         //更改状态
-        statusMapper.changStateByUserId(id,state);
+        statusMapper.changStateByUserId(id, state);
+    }
+
+
+    //更新token(非第三方用户登录时的操作)
+    public void updateTokenByAccountId(User user) {
+        userMapper.updateTokenByAccountId(user);
     }
 }

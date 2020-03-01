@@ -17,6 +17,7 @@ public interface UserMapper {
      */
     @Insert("insert into user(account_id,name,token,gmt_create,gmt_modified,avatar_url) " +
             "values(#{accountId},#{name},#{token},#{gmtCreate},#{gmtModified},#{avatarUrl})")
+    @Options(useGeneratedKeys = true,keyProperty = "id",keyColumn = "id")//加入该注解可以保持对象后，查看对象插入id
     void save(User user);
 
     /**
@@ -89,7 +90,15 @@ public interface UserMapper {
             @Result(property ="gmtCreate", column ="gmt_create"),
             @Result(property ="gmtModified", column ="gmt_modified"),
             @Result(property ="avatarUrl", column ="avatar_url"),
-            @Result(property = "status",column ="id",one = @One(select = "life.ls.community.mapper.StatusMapper.findById"))
+            @Result(property = "status",column ="id",one = @One(select = "life.ls.community.mapper.StatusMapper.findByUId"))
     })
     List<UserDTO> findAllUser();
+
+    //通过项目查询用户
+    @Select("select * from user where name=#{username}")
+    User findByName(String username);
+
+    //更新token
+    @Update("update user set token=#{token} where account_id=#{accountId}")
+    void updateTokenByAccountId(User user);
 }

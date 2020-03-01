@@ -47,7 +47,7 @@ public class PublishController {
         if (user.getStatus() != null) {
             //判断是否被禁言
             String state = user.getStatus().getState();
-            if (UserStateEnum.PROHIBIT.getValue().equals(state)) {
+            if (UserStateEnum.PROHIBIT.getName().equals(state)) {
                 //错误信息
                 model.addAttribute("error","你已经被禁言请联系管理员");
                 return "publish";
